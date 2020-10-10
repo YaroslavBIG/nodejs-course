@@ -37,6 +37,9 @@ addTestUsers();
 
 const getAllUsers = () => getDataFromDb(collection.USERS);
 
-const createUser = user => updateDb(collection.USERS, [user]);
+const createUser = user => {
+  updateDb(collection.USERS, [user]);
+  return getUser(user.id);
+};
 
 module.exports = { getAllUsers, getUser, createUser };

@@ -13,11 +13,12 @@ router.route('/:id').get(async (req, res) => {
 });
 
 router.route('/').post(async (req, res) => {
+  const { login, password, name } = req.body;
   const user = await usersService.create(
     new User({
-      login: req.body.login,
-      password: req.body.password,
-      name: req.body.name
+      login,
+      password,
+      name
     })
   );
   res.json(User.toResponse(user));
