@@ -1,6 +1,11 @@
+const { getAllUsers, getUser, createUser } = require('../../common/inMemoryDB');
+
 const getAll = async () => {
-  // TODO: mock implementation. should be replaced during task development
-  return [];
+  return getAllUsers();
 };
 
-module.exports = { getAll };
+const get = async _id => getUser(_id);
+
+const create = async user => createUser(user);
+
+module.exports = { getAll, get, create };
