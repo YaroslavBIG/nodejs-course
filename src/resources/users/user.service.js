@@ -4,7 +4,7 @@ const getAll = () => usersRepo.getAll();
 
 const get = _id => usersRepo.get(_id);
 
-const create = user => usersRepo.create(user);
+const create = user => usersRepo.createUser(user);
 
 const deleteUser = _id => usersRepo.deleteUser(_id);
 

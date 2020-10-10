@@ -1,21 +1,22 @@
 const {
-  getAllUsers,
-  getUser,
-  createUser,
-  removeUser,
-  updateUser
+  getAllByCollectionName,
+  getById,
+  create,
+  remove,
+  updateUser,
+  collection
 } = require('../../common/inMemoryDB');
 
 const getAll = async () => {
-  return getAllUsers();
+  return getAllByCollectionName(collection.USERS);
 };
 
-const get = async _id => getUser(_id);
+const get = async _id => getById(_id, collection.USERS);
 
-const create = async user => createUser(user);
+const createUser = async user => create(user, collection.USERS);
 
-const deleteUser = async _id => removeUser(_id);
+const deleteUser = async _id => remove(_id, collection.USERS);
 
 const update = async data => updateUser(data);
 
-module.exports = { getAll, get, create, deleteUser, update };
+module.exports = { getAll, get, createUser, deleteUser, update };
