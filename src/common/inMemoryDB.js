@@ -27,8 +27,12 @@ const getDataFromDb = collect => {
   throw new Error('Error collection (get)');
 };
 
-const getUser = _id =>
-  getDataFromDb(collection.USERS).filter(user => user.id === _id);
+const getUser = _id => {
+  const result = getDataFromDb(collection.USERS).filter(
+    user => user.id === _id
+  );
+  return result[0] ? result[0] : null;
+};
 
 const testUsers = [new User(), new User(), new User()];
 
@@ -42,4 +46,10 @@ const createUser = user => {
   return getUser(user.id);
 };
 
-module.exports = { getAllUsers, getUser, createUser };
+const removeUser = _id => {
+  const status = getUser(_id) ? 204 : 404;
+  DB.users = getDataFromDb(collection.USERS).filter(user => user.id !== _id);
+  return status;
+};
+
+module.exports = { getAllUsers, getUser, createUser, removeUser };
