@@ -29,9 +29,23 @@ router.route('/').post(async (req, res) => {
 
 router.route('/:id').delete(async (req, res) => {
   const user = await usersService.deleteUser(req.params.id);
+  const message = user === 204 ? 'The user has been deleted' : 'User not found';
+  res.status(user).send(message);
+});
+
+router.route('/:id').put(async (req, res) => {
+  const { login, password, name } = req.body;
+  const id = req.params.id;
+  const updateParams = {
+    login,
+    password,
+    name,
+    id
+  };
+  const user = await usersService.update(updateParams);
   // eslint-disable-next-line no-unused-expressions
-  user === 204
-    ? res.status(204).send('The user has been deleted')
+  user.status === 204
+    ? res.status(200).json(User.toResponse(user.updateUser))
     : res.status(404).send('User not found');
 });
 

@@ -8,4 +8,6 @@ const create = user => usersRepo.create(user);
 
 const deleteUser = _id => usersRepo.deleteUser(_id);
 
-module.exports = { getAll, get, create, deleteUser };
+const update = data => usersRepo.update(data);
+
+module.exports = { getAll, get, create, deleteUser, update };
