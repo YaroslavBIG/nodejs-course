@@ -1,35 +1,18 @@
-/*
-[
-  {
-    "id": "c9f0e1bd-d10a-4435-bf97-7c2ac3143ad1",
-    "title": "Autotest board",
-    "columns": [
-      {
-        "title": "Backlog",
-        "order": 1
-      },
-      {
-        "title": "Sprint",
-        "order": 2
-      }
-    ]
-  }
-]*/
 const uuid = require('uuid');
 
 class Board {
   constructor({
     id = uuid(),
-    title = 'USER',
+    title = 'Test Board',
     columns = [
       {
         id: uuid(),
-        title: 'testData',
+        title: 'test data',
         order: 1
       },
       {
         id: uuid(),
-        title: 'testData2',
+        title: 'another test data',
         order: 2
       }
     ]
