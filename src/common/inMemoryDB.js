@@ -60,18 +60,18 @@ const remove = async (_id, collectionName) => {
     el => el.id !== _id
   );
   if (collectionName === collection.USERS) {
-    DB[collection.TASKS] = [...DB[collection.TASKS]].map(task => {
+    await (DB[collection.TASKS] = [...DB[collection.TASKS]].map(task => {
       if (task.userId === _id) {
         task.userId = null;
-        return task;
       }
       return task;
-    });
+    }));
   }
   if (collectionName === collection.BOARDS) {
-    DB[collection.TASKS] = [...DB[collection.TASKS]].filter(
+    // eslint-disable-next-line require-atomic-updates
+    await (DB[collection.TASKS] = [...DB[collection.TASKS]].filter(
       task => task.boardId !== _id
-    );
+    ));
   }
   return status;
 };
