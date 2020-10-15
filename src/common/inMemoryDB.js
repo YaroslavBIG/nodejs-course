@@ -15,7 +15,7 @@ const DB = {
 
 // Tasks
 
-const addToDb = (collectionName, data) => {
+const addToDb = async (collectionName, data) => {
   if (DB[collectionName]) {
     DB[collectionName] = [...DB[collectionName], ...data];
   } else {
@@ -30,8 +30,10 @@ const getDataFromDb = collectionName => {
   throw new Error('Error collection (get)');
 };
 
-const getById = (_id, collectionName) => {
-  const result = getDataFromDb(collectionName).filter(el => el.id === _id);
+const getById = async (_id, collectionName) => {
+  const result = await getDataFromDb(collectionName).filter(
+    el => el.id === _id
+  );
   return result.length ? result[0] : null;
 };
 
@@ -44,22 +46,24 @@ addTestUsers();
 const addTestBoards = () => addToDb(collection.BOARDS, testBoards);
 addTestBoards();
 
-const getAllByCollectionName = collectionName => getDataFromDb(collectionName);
+const getAllByCollectionName = async collectionName =>
+  getDataFromDb(collectionName);
 
-const create = (data, collectionName) => {
-  addToDb(collectionName, [data]);
+const create = async (data, collectionName) => {
+  await addToDb(collectionName, [data]);
   return getById(data.id, collectionName);
 };
 
-const remove = (_id, collectionName) => {
-  const status = 204; // getById(_id, collectionName) ? 204 : 404;
-  DB[collectionName] = getDataFromDb(collectionName).filter(
+const remove = async (_id, collectionName) => {
+  const status = (await getById(_id, collectionName)) ? 204 : 404;
+  DB[collectionName] = await getDataFromDb(collectionName).filter(
     el => el.id !== _id
   );
   if (collectionName === collection.USERS) {
-    DB[collection.TASKS] = getDataFromDb(collection.TASKS).map(task => {
+    DB[collection.TASKS] = await getDataFromDb(collection.TASKS).map(task => {
       if (task.userId === _id) {
         task.userId = null;
+        return task;
       }
       return task;
     });
@@ -68,74 +72,75 @@ const remove = (_id, collectionName) => {
     DB[collection.TASKS] = getDataFromDb(collection.TASKS).map(
       task => task.boardId !== _id
     );
+    return 204;
   }
   return status;
 };
 
-const updateUser = data => {
+const updateUser = async data => {
   const { id, name, password, login } = data;
-  const status = 204; // getById(id, collection.USERS) ? 204 : 404;
+  const oldUser = await getById(id, collection.USERS);
+  const status = oldUser ? 204 : 404;
   if (status === 404) return { status };
-  const user = getById(id, collection.USERS);
+  const user = await getById(id, collection.USERS);
   user.name = name ? name : user.name;
   user.password = password ? password : user.password;
   user.login = login ? login : user.login;
-  const userIndex = DB[collection.USERS].findIndex(el => el.id === id);
+  const userIndex = await DB[collection.USERS].findIndex(el => el.id === id);
   DB[collection.USERS].splice(userIndex, 1, user);
   return { status, updateUser: getById(id, collection.USERS) };
 };
 
 // Boards
 
-const updateBoard = data => {
+const updateBoard = async data => {
   const { title, columns, id } = data;
-  const board = getById(id, collection.BOARDS);
-  const status = 204; // board.length ? 204 : 404;
+  const board = await getById(id, collection.BOARDS);
+  const status = board.length ? 204 : 404;
   if (status === 404) return { status };
   board.title = title ? title : board.title;
   board.columns = columns ? columns : board.columns;
-  board.id = id;
-  const userIndex = DB[collection.USERS].findIndex(el => el.id === id);
-  DB[collection.USERS].splice(userIndex, 1, board);
-  return { status, updateBoard: getById(id, collection.BOARDS) };
+  const userIndex = await DB[collection.USERS].findIndex(el => el.id === id);
+  await DB[collection.USERS].splice(userIndex, 1, board);
+  return { status, board: getById(id, collection.BOARDS) };
 };
 
 // Tasks
 
-const getAllTasksByBoardId = boardId => {
+const getAllTasksByBoardId = async boardId => {
   return getDataFromDb(collection.TASKS).filter(
     task => task.boardId === boardId
   );
 };
 
-const getTasksById = (boardId, taskId) => {
-  const allTasksOnBoard = getAllTasksByBoardId(boardId);
+const getTasksById = async (boardId, taskId) => {
+  const allTasksOnBoard = await getAllTasksByBoardId(boardId);
   return allTasksOnBoard.filter(task => task.id === taskId);
 };
 
-const removeTask = (boardId, taskId) => {
-  // const allTasksOnBoard = getAllTasksByBoardId(boardId);
-  const status = 204; // DB[collection.TASKS].findIndex(el => el.id === taskId) ? 204 : 404;
-  DB[collection.TASKS] = DB[collection.TASKS].filter(
-    task => task.id !== taskId
-  );
+const removeTask = async (boardId, taskId) => {
+  const allTasksOnBoard = [...DB[collection.TASKS]];
+  const status =
+    DB[collection.TASKS].findIndex(el => el.id === taskId) >= 0
+      ? 204
+      : new Error('404');
+  DB[collection.TASKS] = allTasksOnBoard.filter(task => task.id !== taskId);
   return status;
 };
 
-const updateTask = (taskId, boardId, body) => {
-  let task = getTasksById(boardId, taskId);
-  const status = DB[collection.TASKS].findIndex(el => el.id === taskId)
-    ? 204
-    : 404;
+const updateTask = async (taskId, boardId, body) => {
+  const task = await getTasksById(boardId, taskId);
+  const status =
+    DB[collection.TASKS].findIndex(el => el.id === taskId) >= 0 ? 204 : 404;
   if (status === 404) return { status };
-  task = {
+  const newTask = {
     ...task,
     ...body
   };
-  const taskIndex = DB[collection.TASKS].findIndex(
+  const taskIndex = await DB[collection.TASKS].findIndex(
     el => el.id === taskId && el.boardId === boardId
   );
-  DB[collection.TASKS].splice(taskIndex, 1, task);
+  await DB[collection.TASKS].splice(taskIndex, 1, newTask);
   return { status, updateTask: getTasksById(boardId, taskId) };
 };
 

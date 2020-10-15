@@ -30,8 +30,8 @@ router.route('/').post(async (req, res) => {
 router.route('/:id').delete(async (req, res) => {
   const user = await usersService.deleteUser(req.params.id);
   const message = user === 204 ? 'The user has been deleted' : 'User not found';
-  // const status = user === 204 ? 200 : 404;
-  res.status(200).send(message);
+  const status = user === 204 ? 200 : 404;
+  res.status(status).send(message);
 });
 
 router.route('/:id').put(async (req, res) => {
