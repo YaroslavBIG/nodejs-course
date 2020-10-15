@@ -25,7 +25,7 @@ const addToDb = async (collectionName, data) => {
 
 const getDataFromDb = collectionName => {
   if (DB[collectionName]) {
-    return [...DB[collectionName]];
+    return DB[collectionName];
   }
   throw new Error('Error collection (get)');
 };
@@ -60,7 +60,7 @@ const remove = async (_id, collectionName) => {
     el => el.id !== _id
   );
   if (collectionName === collection.USERS) {
-    DB[collection.TASKS] = await getDataFromDb(collection.TASKS).map(task => {
+    DB[collection.TASKS] = [...DB[collection.TASKS]].map(task => {
       if (task.userId === _id) {
         task.userId = null;
         return task;
@@ -69,10 +69,9 @@ const remove = async (_id, collectionName) => {
     });
   }
   if (collectionName === collection.BOARDS) {
-    DB[collection.TASKS] = getDataFromDb(collection.TASKS).map(
+    DB[collection.TASKS] = [...DB[collection.TASKS]].filter(
       task => task.boardId !== _id
     );
-    return 204;
   }
   return status;
 };
@@ -94,15 +93,19 @@ const updateUser = async data => {
 // Boards
 
 const updateBoard = async data => {
-  const { title, columns, id } = data;
-  const board = await getById(id, collection.BOARDS);
-  const status = board.length ? 204 : 404;
-  if (status === 404) return { status };
-  board.title = title ? title : board.title;
-  board.columns = columns ? columns : board.columns;
-  const userIndex = await DB[collection.USERS].findIndex(el => el.id === id);
-  await DB[collection.USERS].splice(userIndex, 1, board);
-  return { status, board: getById(id, collection.BOARDS) };
+  const { boardId } = data;
+  let board = getById(boardId, collection.BOARDS);
+  board = await new Board({
+    id: boardId,
+    title: data.title,
+    columns: data.columns
+  });
+  const boardIndex = await DB[collection.BOARDS].findIndex(
+    el => el.id === boardId
+  );
+  const status = boardIndex !== -1 ? 204 : 404;
+  DB[collection.BOARDS].splice(boardIndex, 1, board);
+  return { status, board: getById(boardId, collection.BOARDS) };
 };
 
 // Tasks
@@ -119,12 +122,17 @@ const getTasksById = async (boardId, taskId) => {
 };
 
 const removeTask = async (boardId, taskId) => {
-  const allTasksOnBoard = [...DB[collection.TASKS]];
+  const allTasksOnBoard = DB[collection.TASKS].filter(
+    task => task.boardId === boardId
+  );
   const status =
-    DB[collection.TASKS].findIndex(el => el.id === taskId) >= 0
+    (await allTasksOnBoard.findIndex(el => el.id === taskId)) !== -1
       ? 204
       : new Error('404');
-  DB[collection.TASKS] = allTasksOnBoard.filter(task => task.id !== taskId);
+  // eslint-disable-next-line require-atomic-updates
+  DB[collection.TASKS] = allTasksOnBoard.filter(
+    task => task.id !== taskId && task.boardId === boardId
+  );
   return status;
 };
 

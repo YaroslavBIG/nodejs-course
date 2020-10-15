@@ -32,8 +32,7 @@ router.route('/:id').delete(async (req, res) => {
       req.params.boardId,
       req.params.id
     );
-    console.log(task);
-    res.status(204).send('The task has been deleted');
+    res.status(task).send('The task has been deleted');
   } catch (e) {
     res.status(404).send('task not found');
   }
