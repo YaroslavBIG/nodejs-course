@@ -34,18 +34,14 @@ router.route('/:id').delete(async (req, res) => {
 });
 
 router.route('/:id').put(async (req, res) => {
-  const { title, columns } = req.body;
-  const id = req.params.id;
   const updateParams = {
-    title,
-    columns,
-    id
+    ...req.body,
+    boardId: req.params.id
   };
   const board = await boardsService.update(updateParams);
   // eslint-disable-next-line no-unused-expressions
-  board.status === 204
-    ? res.status(200).json(board.updateBoard)
-    : res.status(404).send('board not found');
+  if (board.status === 204) res.status(200).json(board.updateBoard);
+  else res.status(404).send('board not found');
 });
 
 module.exports = router;
