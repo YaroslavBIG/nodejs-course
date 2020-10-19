@@ -5,9 +5,15 @@ const YAML = require('yamljs');
 const userRouter = require('./resources/users/user.router');
 const boardRouter = require('./resources/boards/board.router');
 const taskRouter = require('./resources/tasks/task.router');
-const { paramsMorgan, morgan, logger } = require('./logger/loggerConfig');
+const {
+  paramsMorgan,
+  morgan,
+  logger,
+  uncachErrorInit
+} = require('./logger/loggerConfig');
 
 const app = express();
+uncachErrorInit();
 const swaggerDocument = YAML.load(path.join(__dirname, '../doc/api.yaml'));
 
 app.use(morgan(paramsMorgan));

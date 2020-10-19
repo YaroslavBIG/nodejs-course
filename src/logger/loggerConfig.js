@@ -64,19 +64,19 @@ const logger = winston.createLogger({
   exceptionHandlers: [new winston.transports.File(options.fileUnhandled)],
   exitOnError: true
 });
-
-process
-  .on('unhandledRejection', (reason, p) => {
-    // console.error(reason, 'Unhandled Rejection at Promise', p);
-    logger.error(
-      `unhandledRejection ${JSON.stringify(reason)} in promise ${p}`
-    );
-  })
-  .on('uncaughtException', err => {
-    // console.error(err, 'Uncaught Exception thrown');
-    logger.error(`uncaughtException ${JSON.stringify(err)}`);
-    // eslint-disable-next-line no-process-exit
-    process.exit(1);
-  });
-
-module.exports = { morgan, paramsMorgan, logger };
+const uncachErrorInit = () => {
+  process
+    .on('unhandledRejection', (reason, p) => {
+      // console.error(reason, 'Unhandled Rejection at Promise', p);
+      logger.error(
+        `unhandledRejection ${JSON.stringify(reason)} in promise ${p}`
+      );
+    })
+    .on('uncaughtException', err => {
+      // console.error(err, 'Uncaught Exception thrown');
+      logger.error(`uncaughtException ${JSON.stringify(err)}`);
+      // eslint-disable-next-line no-process-exit
+      process.exit(1);
+    });
+};
+module.exports = { morgan, paramsMorgan, logger, uncachErrorInit };
