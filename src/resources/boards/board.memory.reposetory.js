@@ -1,3 +1,4 @@
+const { NotFoundError } = require('../../logger/loggerConfig');
 const {
   getAllByCollectionName,
   getById,
@@ -11,7 +12,13 @@ const getAll = async () => {
   return getAllByCollectionName(collection.BOARDS);
 };
 
-const get = async _id => getById(_id, collection.BOARDS);
+const get = async _id => {
+  const board = getById(_id, collection.BOARDS);
+  if (!board) {
+    throw new NotFoundError(collection.BOARDS, `id: ${_id}`);
+  }
+  return board;
+};
 
 const createBoard = async board => create(board, collection.BOARDS);
 

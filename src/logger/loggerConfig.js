@@ -2,6 +2,7 @@ const { LOG_DIR } = require('../common/config');
 const winston = require('winston');
 const morgan = require('morgan');
 const { combine, timestamp, prettyPrint, colorize, cli } = winston.format;
+const { StatusCodes, getReasonPhrase } = require('http-status-codes');
 
 morgan.token('query', req => JSON.stringify(req.query));
 morgan.token('body', req => {
@@ -57,26 +58,55 @@ const options = {
 };
 const logger = winston.createLogger({
   transports: [
-    new winston.transports.Console(),
+    new winston.transports.Console({
+      ...options.console
+    }),
     new winston.transports.File(options.fileError),
     new winston.transports.File(options.fileInfo)
   ],
   exceptionHandlers: [new winston.transports.File(options.fileUnhandled)],
   exitOnError: true
 });
-const uncachErrorInit = () => {
+
+const uncatchErrorInit = () => {
   process
-    .on('unhandledRejection', (reason, p) => {
-      // console.error(reason, 'Unhandled Rejection at Promise', p);
-      logger.error(
-        `unhandledRejection ${JSON.stringify(reason)} in promise ${p}`
-      );
+    .on('unhandledRejection', reason => {
+      logger.error(`unhandledRejection ${reason} in promise`);
     })
     .on('uncaughtException', err => {
-      // console.error(err, 'Uncaught Exception thrown');
-      logger.error(`uncaughtException ${JSON.stringify(err)}`);
+      logger.error(`uncaughtException ${err}`);
       // eslint-disable-next-line no-process-exit
       process.exit(1);
     });
 };
-module.exports = { morgan, paramsMorgan, logger, uncachErrorInit };
+
+const handleError = (err, req, res, next) => {
+  if (err.status) {
+    logger.log('warn', `${err.message} status: ${err.status}`);
+    res.status(err.status).send(err.message);
+  } else {
+    logger.error(err.stack);
+    res.status(StatusCodes.INTERNAL_SERVER_ERROR).send({
+      error: getReasonPhrase(StatusCodes.INTERNAL_SERVER_ERROR)
+    });
+  }
+  if (next) return next();
+};
+
+class NotFoundError extends Error {
+  constructor(entity, params, message) {
+    super(
+      message || `Couldn't find a(an) ${entity} with: ${JSON.stringify(params)}`
+    );
+    this.status = StatusCodes.NOT_FOUND;
+  }
+}
+
+module.exports = {
+  morgan,
+  paramsMorgan,
+  logger,
+  uncatchErrorInit,
+  handleError,
+  NotFoundError
+};

@@ -1,6 +1,9 @@
 const router = require('express').Router();
 const User = require('./user.model');
 const usersService = require('./user.service');
+const { NotFoundError } = require('../../logger/loggerConfig');
+const { collection } = require('../../common/inMemoryDB');
+const { handleError } = require('../../logger/loggerConfig');
 
 router.route('/').get(async (req, res) => {
   const users = await usersService.getAll();
@@ -9,10 +12,15 @@ router.route('/').get(async (req, res) => {
 
 router.route('/:id').get(async (req, res) => {
   const user = await usersService.get(req.params.id);
-  // eslint-disable-next-line no-unused-expressions
-  user
-    ? res.json(User.toResponse(user))
-    : res.status(404).send('User not found');
+  if (user) {
+    res.json(User.toResponse(user));
+  } else {
+    handleError(
+      new NotFoundError(collection.USERS, `id: ${req.params.id}`),
+      req,
+      res
+    );
+  }
 });
 
 router.route('/').post(async (req, res) => {
@@ -29,9 +37,15 @@ router.route('/').post(async (req, res) => {
 
 router.route('/:id').delete(async (req, res) => {
   const user = await usersService.deleteUser(req.params.id);
-  const message = user === 204 ? 'The user has been deleted' : 'User not found';
-  const status = user === 204 ? 200 : 404;
-  res.status(status).send(message);
+  if (user === 204) {
+    res.status(user).send('The user has been deleted');
+  } else {
+    handleError(
+      new NotFoundError(collection.USERS, `id: ${req.params.id}`),
+      req,
+      res
+    );
+  }
 });
 
 router.route('/:id').put(async (req, res) => {
@@ -44,10 +58,15 @@ router.route('/:id').put(async (req, res) => {
     id
   };
   const user = await usersService.update(updateParams);
-  // eslint-disable-next-line no-unused-expressions
-  user.status === 204
-    ? res.status(200).json(User.toResponse(user.updateUser))
-    : res.status(404).send('User not found');
+  if (user.status === 204) {
+    res.status(200).json(User.toResponse(user.updateUser));
+  } else {
+    handleError(
+      new NotFoundError(collection.USERS, `id: ${req.params.id}`),
+      req,
+      res
+    );
+  }
 });
 
 module.exports = router;

@@ -1,40 +1,1531 @@
 {
-  level: 'error',
-  message: 'App error',
-  timestamp: '2020-10-19T15:16:19.035Z'
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:06:32.782Z'
 }
 {
+  message: 'unhandledRejection {"status":404} in promise',
   level: 'error',
-  message: 'App error',
-  timestamp: '2020-10-19T15:16:19.040Z'
+  timestamp: '2020-10-19T18:06:32.889Z'
 }
 {
-  level: 'error',
-  message: 'App error',
-  timestamp: '2020-10-19T15:17:26.479Z'
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:06:56.220Z'
 }
 {
-  level: 'error',
-  message: 'App error',
-  timestamp: '2020-10-19T15:19:34.987Z'
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:08:14.265Z'
 }
 {
+  message: 'unhandledRejection {"status":404} in promise',
   level: 'error',
-  message: 'App error',
-  timestamp: '2020-10-19T15:20:41.903Z'
+  timestamp: '2020-10-19T18:08:16.652Z'
 }
 {
-  level: 'error',
-  message: 'App error',
-  timestamp: '2020-10-19T15:23:40.703Z'
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:08:24.847Z'
 }
 {
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:08:29.781Z'
+}
+{
+  message: 'unhandledRejection {"status":404} in promise',
   level: 'error',
-  message: 'App error',
-  timestamp: '2020-10-19T15:24:46.804Z'
+  timestamp: '2020-10-19T18:08:31.797Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:09:33.620Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:09:40.838Z'
+}
+{
+  message: 'unhandledRejection {"status":404} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T18:09:43.567Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:10:05.166Z'
+}
+{
+  message: 'unhandledRejection {"status":404} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T18:10:08.093Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:10:16.113Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:10:20.799Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:17:14.779Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T18:17:17.827Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:21:31.092Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T18:21:39.729Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:22:15.591Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:22:43.572Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:23:25.187Z'
+}
+{
+  message: "TypeError: Cannot destructure property 'id' of 'board' as it is null.\n" +
+    '    at Function.toResponse (C:\\GitHub\\nodejs-course\\src\\resources\\boards\\board.model.js:25:13)\n' +
+    '    at C:\\GitHub\\nodejs-course\\src\\resources\\boards\\board.router.js:21:20\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)',
+  level: 'error',
+  timestamp: '2020-10-19T18:23:27.838Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:24:18.942Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:25:08.336Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:27:23.641Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:27:53.920Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:27:58.241Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:28:54.004Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:29:58.244Z'
+}
+{
+  message: "TypeError: Cannot destructure property 'id' of 'board' as it is null.\n" +
+    '    at Function.toResponse (C:\\GitHub\\nodejs-course\\src\\resources\\boards\\board.model.js:25:13)\n' +
+    '    at C:\\GitHub\\nodejs-course\\src\\resources\\boards\\board.router.js:21:20\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)',
+  level: 'error',
+  timestamp: '2020-10-19T18:30:03.986Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:30:49.582Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:32:01.757Z'
+}
+{
+  message: "TypeError: Cannot destructure property 'id' of 'board' as it is null.\n" +
+    '    at Function.toResponse (C:\\GitHub\\nodejs-course\\src\\resources\\boards\\board.model.js:25:13)\n' +
+    '    at C:\\GitHub\\nodejs-course\\src\\resources\\boards\\board.router.js:21:20\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)',
+  level: 'error',
+  timestamp: '2020-10-19T18:32:17.852Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:32:33.270Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:33:58.070Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:35:07.813Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:35:44.063Z'
+}
+{
+  message: "TypeError: Cannot destructure property 'id' of 'board' as it is null.\n" +
+    '    at Function.toResponse (C:\\GitHub\\nodejs-course\\src\\resources\\boards\\board.model.js:25:13)\n' +
+    '    at C:\\GitHub\\nodejs-course\\src\\resources\\boards\\board.router.js:21:20\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)',
+  level: 'error',
+  timestamp: '2020-10-19T18:35:47.980Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:38:41.529Z'
+}
+{
+  message: "TypeError: Cannot destructure property 'id' of 'board' as it is null.\n" +
+    '    at Function.toResponse (C:\\GitHub\\nodejs-course\\src\\resources\\boards\\board.model.js:25:13)\n' +
+    '    at C:\\GitHub\\nodejs-course\\src\\resources\\boards\\board.router.js:21:27\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)',
+  level: 'error',
+  timestamp: '2020-10-19T18:38:45.383Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:40:27.074Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T18:40:29.982Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:41:01.839Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T18:41:04.532Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:41:54.708Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T18:42:08.071Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:42:14.260Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T18:42:18.311Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:42:31.185Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T18:42:34.323Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:43:29.306Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T18:43:35.085Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:43:58.196Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T18:44:13.461Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:50:09.450Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T18:50:16.801Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:51:00.798Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T18:51:06.289Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:51:34.013Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T18:51:40.168Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:51:48.937Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:52:06.800Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T18:52:09.616Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:52:25.145Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:52:38.396Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:52:53.526Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T18:52:56.214Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:53:39.491Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T18:53:42.242Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:53:50.295Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T18:53:52.230Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:53:59.647Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T18:54:04.299Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:01:00.001Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:01:05.408Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:01:36.535Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:04:09.473Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:04:16.308Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:04:16.308Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:04:46.640Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:06:05.884Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:28:28.416Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:28:50.002Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:31:01.427Z'
+}
+{
+  message: "TypeError: Cannot destructure property 'id' of 'board' as it is null.\n" +
+    '    at Function.toResponse (C:\\GitHub\\nodejs-course\\src\\resources\\boards\\board.model.js:25:13)\n' +
+    '    at C:\\GitHub\\nodejs-course\\src\\resources\\boards\\board.router.js:28:20\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at async C:\\GitHub\\nodejs-course\\src\\logger\\loggerConfig.js:96:12',
+  level: 'error',
+  timestamp: '2020-10-19T19:31:04.472Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:35:32.423Z'
+}
+{
+  message: "TypeError: Cannot destructure property 'id' of 'board' as it is null.\n" +
+    '    at Function.toResponse (C:\\GitHub\\nodejs-course\\src\\resources\\boards\\board.model.js:25:13)\n' +
+    '    at C:\\GitHub\\nodejs-course\\src\\resources\\boards\\board.router.js:28:20\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at async C:\\GitHub\\nodejs-course\\src\\logger\\loggerConfig.js:96:12',
+  level: 'error',
+  timestamp: '2020-10-19T19:35:35.589Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:36:17.900Z'
+}
+{
+  message: "TypeError: Cannot destructure property 'id' of 'board' as it is null.\n" +
+    '    at Function.toResponse (C:\\GitHub\\nodejs-course\\src\\resources\\boards\\board.model.js:25:13)\n' +
+    '    at C:\\GitHub\\nodejs-course\\src\\resources\\boards\\board.router.js:21:20\n' +
+    '    at processTicksAndRejections (internal/process/task_queues.js:93:5)\n' +
+    '    at async C:\\GitHub\\nodejs-course\\src\\logger\\loggerConfig.js:96:12',
+  level: 'error',
+  timestamp: '2020-10-19T19:36:36.053Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:38:24.327Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:38:46.185Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:39:04.798Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:39:50.141Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:40:49.334Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:42:04.368Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:42:07.992Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:42:18.120Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:42:50.435Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:44:36.274Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:44:36.277Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:44:57.846Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:44:57.851Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:45:15.490Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:45:15.494Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:45:44.096Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:45:44.102Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:47:11.682Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:47:11.686Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:48:53.943Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:48:53.948Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:49:04.522Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:49:04.527Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:49:56.612Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:49:56.617Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:50:45.822Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:50:45.826Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:50:57.216Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:50:57.220Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:51:06.699Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:51:06.702Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:51:34.134Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:51:34.139Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:51:58.460Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:51:58.463Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:52:33.691Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:52:33.694Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:52:52.474Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:52:52.478Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:53:40.350Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:53:40.353Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:54:07.000Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:54:07.004Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:55:01.226Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:55:01.230Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:55:13.728Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:55:13.731Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:56:16.658Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:56:16.662Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:56:24.584Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:56:24.587Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:56:44.627Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:56:44.631Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:57:17.105Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:57:17.109Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:57:25.790Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:57:25.793Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:59:19.944Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:59:19.947Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:59:32.278Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:59:32.283Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:59:38.464Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:59:38.467Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T19:59:42.896Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T19:59:42.899Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:00:08.088Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T20:00:08.091Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:03:22.991Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T20:03:22.995Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:03:33.610Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T20:03:33.613Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:03:43.763Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T20:03:43.767Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:03:52.916Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T20:03:52.919Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:04:21.334Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T20:04:21.337Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:08:39.940Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T20:08:39.944Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:09:50.797Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T20:10:04.708Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:14:51.753Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:14:58.007Z'
 }
 {
   message: 'unhandledRejection {} in promise [object Promise]',
   level: 'error',
-  timestamp: '2020-10-19T15:47:57.282Z'
+  timestamp: '2020-10-19T20:14:58.011Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:15:30.817Z'
+}
+{
+  message: 'unhandledRejection {} in promise [object Promise]',
+  level: 'error',
+  timestamp: '2020-10-19T20:15:30.822Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:16:14.946Z'
+}
+{
+  message: 'unhandledRejection {} in promise [object Promise]',
+  level: 'error',
+  timestamp: '2020-10-19T20:16:14.951Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:16:53.972Z'
+}
+{
+  message: 'unhandledRejection Error: Oops! in promise [object Promise]',
+  level: 'error',
+  timestamp: '2020-10-19T20:16:53.976Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:17:21.732Z'
+}
+{
+  message: 'unhandledRejection {} in promise',
+  level: 'error',
+  timestamp: '2020-10-19T20:17:21.736Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:17:31.948Z'
+}
+{
+  message: 'unhandledRejection Error: Oops! in promise',
+  level: 'error',
+  timestamp: '2020-10-19T20:17:31.951Z'
+}
+{
+  error: TypeError: uncachErrorInit is not a function
+      at Object.<anonymous> (C:\GitHub\nodejs-course\src\app.js:47:1)
+      at Module._compile (internal/modules/cjs/loader.js:1085:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)
+      at Module.load (internal/modules/cjs/loader.js:950:32)
+      at Function.Module._load (internal/modules/cjs/loader.js:791:14)
+      at Module.require (internal/modules/cjs/loader.js:974:19)
+      at require (internal/modules/cjs/helpers.js:88:18)
+      at Object.<anonymous> (C:\GitHub\nodejs-course\src\server.js:2:13)
+      at Module._compile (internal/modules/cjs/loader.js:1085:30)
+      at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10),
+  level: 'error',
+  message: 'uncaughtException: uncachErrorInit is not a function\n' +
+    'TypeError: uncachErrorInit is not a function\n' +
+    '    at Object.<anonymous> (C:\\GitHub\\nodejs-course\\src\\app.js:47:1)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1085:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:950:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:791:14)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:974:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:88:18)\n' +
+    '    at Object.<anonymous> (C:\\GitHub\\nodejs-course\\src\\server.js:2:13)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1085:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)',
+  stack: 'TypeError: uncachErrorInit is not a function\n' +
+    '    at Object.<anonymous> (C:\\GitHub\\nodejs-course\\src\\app.js:47:1)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1085:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)\n' +
+    '    at Module.load (internal/modules/cjs/loader.js:950:32)\n' +
+    '    at Function.Module._load (internal/modules/cjs/loader.js:791:14)\n' +
+    '    at Module.require (internal/modules/cjs/loader.js:974:19)\n' +
+    '    at require (internal/modules/cjs/helpers.js:88:18)\n' +
+    '    at Object.<anonymous> (C:\\GitHub\\nodejs-course\\src\\server.js:2:13)\n' +
+    '    at Module._compile (internal/modules/cjs/loader.js:1085:30)\n' +
+    '    at Object.Module._extensions..js (internal/modules/cjs/loader.js:1114:10)',
+  exception: true,
+  date: 'Mon Oct 19 2020 23:19:03 GMT+0300 (Москва, стандартное время)',
+  process: {
+    pid: 16184,
+    uid: null,
+    gid: null,
+    cwd: 'C:\\GitHub\\nodejs-course',
+    execPath: 'C:\\GitHub\\nodejs-course\\node_modules\\node\\bin\\node.exe',
+    version: 'v14.13.0',
+    argv: [
+      'C:\\GitHub\\nodejs-course\\node_modules\\node\\bin\\node.exe',
+      'C:\\GitHub\\nodejs-course\\src\\server.js'
+    ],
+    memoryUsage: {
+      rss: 41824256,
+      heapTotal: 20267008,
+      heapUsed: 13553280,
+      external: 1643690,
+      arrayBuffers: 25770
+    }
+  },
+  os: { loadavg: [ 0, 0, 0 ], uptime: 117599 },
+  trace: [
+    {
+      column: 1,
+      file: 'C:\\GitHub\\nodejs-course\\src\\app.js',
+      function: null,
+      line: 47,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1085,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1114,
+      method: '.js',
+      native: false
+    },
+    {
+      column: 32,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.load',
+      line: 950,
+      method: 'load',
+      native: false
+    },
+    {
+      column: 14,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._load',
+      line: 791,
+      method: '_load',
+      native: false
+    },
+    {
+      column: 19,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module.require',
+      line: 974,
+      method: 'require',
+      native: false
+    },
+    {
+      column: 18,
+      file: 'internal/modules/cjs/helpers.js',
+      function: 'require',
+      line: 88,
+      method: null,
+      native: false
+    },
+    {
+      column: 13,
+      file: 'C:\\GitHub\\nodejs-course\\src\\server.js',
+      function: null,
+      line: 2,
+      method: null,
+      native: false
+    },
+    {
+      column: 30,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._compile',
+      line: 1085,
+      method: '_compile',
+      native: false
+    },
+    {
+      column: 10,
+      file: 'internal/modules/cjs/loader.js',
+      function: 'Module._extensions..js',
+      line: 1114,
+      method: '.js',
+      native: false
+    }
+  ],
+  timestamp: '2020-10-19T20:19:03.991Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:19:32.310Z'
+}
+{
+  message: 'unhandledRejection Error: Oops! in promise',
+  level: 'error',
+  timestamp: '2020-10-19T20:19:32.313Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:19:45.615Z'
+}
+{
+  message: 'unhandledRejection TypeError: next is not a function in promise',
+  level: 'error',
+  timestamp: '2020-10-19T20:19:54.972Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:20:55.322Z'
+}
+{
+  message: 'unhandledRejection TypeError: next is not a function in promise',
+  level: 'error',
+  timestamp: '2020-10-19T20:20:58.739Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:21:13.529Z'
+}
+{
+  message: 'unhandledRejection TypeError: next is not a function in promise',
+  level: 'error',
+  timestamp: '2020-10-19T20:21:15.967Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:21:39.343Z'
+}
+{
+  message: "unhandledRejection TypeError: Cannot destructure property 'id' of 'board' as it is null. in promise",
+  level: 'error',
+  timestamp: '2020-10-19T20:21:42.331Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:22:19.542Z'
+}
+{
+  message: "unhandledRejection TypeError: Cannot destructure property 'id' of 'board' as it is null. in promise",
+  level: 'error',
+  timestamp: '2020-10-19T20:22:25.855Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:22:42.348Z'
+}
+{
+  message: "unhandledRejection TypeError: Cannot destructure property 'id' of 'board' as it is null. in promise",
+  level: 'error',
+  timestamp: '2020-10-19T20:22:44.533Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:23:45.475Z'
+}
+{
+  message: `unhandledRejection Error: Couldn't find a(an) boards with: "id: 12312" in promise`,
+  level: 'error',
+  timestamp: '2020-10-19T20:23:48.241Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:25:16.693Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:25:25.198Z'
+}
+{
+  message: "unhandledRejection TypeError: Cannot destructure property 'id' of 'board' as it is null. in promise",
+  level: 'error',
+  timestamp: '2020-10-19T20:25:27.781Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:26:16.063Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:26:52.555Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:28:02.454Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:29:02.621Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:29:33.491Z'
+}
+{
+  message: 'unhandledRejection Error: Oops! in promise',
+  level: 'error',
+  timestamp: '2020-10-19T20:29:33.495Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:29:53.470Z'
+}
+{
+  message: 'unhandledRejection Error: Oops! in promise',
+  level: 'error',
+  timestamp: '2020-10-19T20:29:53.474Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:30:11.451Z'
+}
+{
+  message: 'unhandledRejection Error: Oops! in promise',
+  level: 'error',
+  timestamp: '2020-10-19T20:30:11.456Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:30:18.099Z'
+}
+{
+  message: 'unhandledRejection TypeError: next is not a function in promise',
+  level: 'error',
+  timestamp: '2020-10-19T20:30:22.415Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:31:13.665Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:31:40.564Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:31:56.024Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:34:11.628Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:36:49.505Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:38:06.040Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:39:41.233Z'
+}
+{ level: 'warn', message: 404, timestamp: '2020-10-19T20:39:45.735Z' }
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:40:53.297Z'
+}
+{ level: 'warn', message: 404, timestamp: '2020-10-19T20:40:56.391Z' }
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:41:08.050Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:42:15.402Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) boards with: "id: 12312"`,
+  timestamp: '2020-10-19T20:42:18.451Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:42:47.274Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) boards with: "id: 12312"`,
+  timestamp: '2020-10-19T20:42:49.759Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:43:46.590Z'
+}
+{
+  level: 'warn',
+  message: `warn: Couldn't find a(an) boards with: "id: 12312" status: 404`,
+  timestamp: '2020-10-19T20:43:49.227Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:44:01.450Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) boards with: "id: 12312" status: 404`,
+  timestamp: '2020-10-19T20:44:05.760Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:44:29.903Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:47:20.911Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:49:08.425Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: 5165" status: 404`,
+  timestamp: '2020-10-19T20:50:01.522Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:50:20.141Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:51:19.809Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) boards with: "id: 4391bdfa-c0ac-493d-9941-bcc63291c32e" status: 404`,
+  timestamp: '2020-10-19T20:52:02.185Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: d107ccf8-bfc8-455b-883b-03a459f6d6bc" status: 404`,
+  timestamp: '2020-10-19T20:52:02.188Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: 61e90cbb-5512-4732-841f-79b559613db2" status: 404`,
+  timestamp: '2020-10-19T20:52:02.217Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: 311490a4-880a-4196-b923-ef8b67fb7e1f" status: 404`,
+  timestamp: '2020-10-19T20:52:02.218Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: 20cd3d11-df9f-4022-9cd5-3eb3e6de813e" status: 404`,
+  timestamp: '2020-10-19T20:52:02.220Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: 2a98087f-b46f-43cc-a00f-620eae7be976" status: 404`,
+  timestamp: '2020-10-19T20:52:02.221Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: ca96e24d-f06f-42ab-9a56-9849c6192f43" status: 404`,
+  timestamp: '2020-10-19T20:52:02.222Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: 545" status: 404`,
+  timestamp: '2020-10-19T20:52:15.513Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:52:49.609Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:54:54.507Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:56:41.254Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: 65766e48-e286-46d7-b105-27e56fbcd69f" status: 404`,
+  timestamp: '2020-10-19T20:56:47.718Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) boards with: "id: 5abe73ef-abf6-486b-b27e-33f88cd7a0e9" status: 404`,
+  timestamp: '2020-10-19T20:56:47.728Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: 04820fb8-e427-49a3-8b4a-fd7906ae0e22" status: 404`,
+  timestamp: '2020-10-19T20:56:47.761Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: 242b0b0e-7e97-40c7-8334-b39518ad4e43" status: 404`,
+  timestamp: '2020-10-19T20:56:47.762Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: 768c472d-4239-4474-81ca-2afcc6f6fbdf" status: 404`,
+  timestamp: '2020-10-19T20:56:47.765Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: a892d39f-76ca-479d-8451-fc08ad298f92" status: 404`,
+  timestamp: '2020-10-19T20:56:47.767Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: 78c5b33c-4b05-4dc4-a960-c7c7130eb6a6" status: 404`,
+  timestamp: '2020-10-19T20:56:47.768Z'
+}
+{
+  message: 'App is running on http://localhost:4000',
+  level: 'info',
+  timestamp: '2020-10-19T20:58:04.152Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) boards with: "id: cf5e70cd-367b-4fc2-8cc1-e9a54a0ea5c6" status: 404`,
+  timestamp: '2020-10-19T20:58:09.844Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: 66b286e5-7f35-4b3d-9881-4d28a83e09fd" status: 404`,
+  timestamp: '2020-10-19T20:58:09.874Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: d0211fee-ca4c-4c24-b023-ff0f3c238dec" status: 404`,
+  timestamp: '2020-10-19T20:58:09.876Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: ffea73e4-81b5-4be6-ad70-6c066ff5a920" status: 404`,
+  timestamp: '2020-10-19T20:58:09.877Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: 36c863e1-8742-4a32-b62c-ef895d2195fa" status: 404`,
+  timestamp: '2020-10-19T20:58:09.879Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: 18074416-98f0-445d-9285-bc9a8411f08a" status: 404`,
+  timestamp: '2020-10-19T20:58:09.882Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: a6e05147-b176-4bea-ae74-43094b8ceb85" status: 404`,
+  timestamp: '2020-10-19T20:58:09.884Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: 5425c47d-e7d6-4a37-aa10-43ce44c83e68" status: 404`,
+  timestamp: '2020-10-19T20:58:09.886Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) boards with: "id: 216391c1-f7db-43cc-884e-41a4a21ec4f4" status: 404`,
+  timestamp: '2020-10-19T20:58:15.664Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: d6ce0324-a67e-4b86-8036-326329066895" status: 404`,
+  timestamp: '2020-10-19T20:58:15.675Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: a1b6dcb0-6cdb-452d-81fd-423694dfaee2" status: 404`,
+  timestamp: '2020-10-19T20:58:15.705Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: 22acc7d9-7a9b-4614-87a6-869289028fd1" status: 404`,
+  timestamp: '2020-10-19T20:58:15.706Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: 27ca3faf-6ddd-49cf-b5c4-f2fd1480648f" status: 404`,
+  timestamp: '2020-10-19T20:58:15.707Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: 767d5991-1c24-4fe7-b8f5-3c455db2a0a1" status: 404`,
+  timestamp: '2020-10-19T20:58:15.709Z'
+}
+{
+  level: 'warn',
+  message: `Couldn't find a(an) tasks with: "id: 16190e3b-2785-4b30-a358-c6994e85a139" status: 404`,
+  timestamp: '2020-10-19T20:58:15.710Z'
 }
