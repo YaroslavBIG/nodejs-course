@@ -1,0 +1,35 @@
+{
+  level: 'error',
+  message: 'App error',
+  timestamp: '2020-10-19T15:16:19.035Z'
+}
+{
+  level: 'error',
+  message: 'App error',
+  timestamp: '2020-10-19T15:16:19.040Z'
+}
+{
+  level: 'error',
+  message: 'App error',
+  timestamp: '2020-10-19T15:17:26.479Z'
+}
+{
+  level: 'error',
+  message: 'App error',
+  timestamp: '2020-10-19T15:19:34.987Z'
+}
+{
+  level: 'error',
+  message: 'App error',
+  timestamp: '2020-10-19T15:20:41.903Z'
+}
+{
+  level: 'error',
+  message: 'App error',
+  timestamp: '2020-10-19T15:23:40.703Z'
+}
+{
+  level: 'error',
+  message: 'App error',
+  timestamp: '2020-10-19T15:24:46.804Z'
+}
