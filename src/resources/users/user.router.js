@@ -7,13 +7,13 @@ const { handleError } = require('../../logger/loggerConfig');
 
 router.route('/').get(async (req, res) => {
   const users = await usersService.getAll();
-  res.json(users.map(User.toResponse));
+  res.json(users.map(user => user.toResponse()));
 });
 
 router.route('/:id').get(async (req, res) => {
   const user = await usersService.get(req.params.id);
   if (user) {
-    res.json(User.toResponse(user));
+    res.json(user.toResponse());
   } else {
     handleError(
       new NotFoundError(collection.USERS, `id: ${req.params.id}`),
@@ -32,13 +32,13 @@ router.route('/').post(async (req, res) => {
       name
     })
   );
-  res.json(User.toResponse(user));
+  res.json(user.toResponse());
 });
 
 router.route('/:id').delete(async (req, res) => {
   const user = await usersService.deleteUser(req.params.id);
-  if (user === 204) {
-    res.status(user).send('The user has been deleted');
+  if (user.deletedCount === 1) {
+    res.status(204).send('The user has been deleted');
   } else {
     handleError(
       new NotFoundError(collection.USERS, `id: ${req.params.id}`),
@@ -58,8 +58,8 @@ router.route('/:id').put(async (req, res) => {
     id
   };
   const user = await usersService.update(updateParams);
-  if (user.status === 204) {
-    res.status(200).json(User.toResponse(user.updateUser));
+  if (user) {
+    res.status(200).json(user.toResponse());
   } else {
     handleError(
       new NotFoundError(collection.USERS, `id: ${req.params.id}`),

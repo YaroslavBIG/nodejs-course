@@ -1,8 +1,11 @@
 const express = require('express');
+require('express-async-errors');
 const swaggerUI = require('swagger-ui-express');
 const createError = require('http-errors');
 const path = require('path');
 const YAML = require('yamljs');
+const cors = require('cors');
+const helmet = require('helmet');
 const userRouter = require('./resources/users/user.router');
 const boardRouter = require('./resources/boards/board.router');
 const taskRouter = require('./resources/tasks/task.router');
@@ -15,7 +18,10 @@ const {
 const { StatusCodes } = require('http-status-codes');
 
 const app = express();
+app.disable('x-powered-by');
 uncatchErrorInit();
+app.use(helmet());
+app.use(cors());
 
 const swaggerDocument = YAML.load(path.join(__dirname, '../doc/api.yaml'));
 

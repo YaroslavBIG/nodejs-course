@@ -1,4 +1,8 @@
 node_modules
 .idea/
-.vscode/
-.log/
+/log/
+/.vscode/
+log/
+log/app.log
+log/exceptions.log
+log/info.log
