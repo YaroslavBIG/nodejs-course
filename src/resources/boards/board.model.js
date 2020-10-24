@@ -1,30 +1,20 @@
-const uuid = require('uuid');
+/* eslint-disable func-names */
+const mongoose = require('mongoose');
+const { Schema } = mongoose;
 
-class Board {
-  constructor({
-    id = uuid(),
-    title = 'Test Board',
-    columns = [
-      {
-        id: uuid(),
-        title: 'test data',
-        order: 1
-      },
-      {
-        id: uuid(),
-        title: 'another test data',
-        order: 2
-      }
-    ]
-  } = {}) {
-    this.id = id;
-    this.title = title;
-    this.columns = [...columns];
-  }
-  static toResponse(board) {
-    const { id, title, columns } = board;
-    return { id, title, columns };
-  }
-}
+const Board = new Schema(
+  {
+    title: String,
+    columns: Array
+  },
+  { collection: 'boards' }
+);
 
-module.exports = Board;
+// eslint-disable-next-line prettier/prettier
+Board.method('toResponse', function () {
+  const { _id, ...rest } = this.toJSON();
+  delete rest.__v;
+  return { id: _id, ...rest };
+});
+
+module.exports = module.exports = mongoose.model('boards', Board);

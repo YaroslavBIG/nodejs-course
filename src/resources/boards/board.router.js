@@ -7,10 +7,10 @@ const { handleError } = require('../../logger/loggerConfig');
 
 router.route('/').get(async (req, res) => {
   const boards = await boardsService.getAll();
-  res.json(boards.map(Board.toResponse));
-  if (boards.length === 0) {
-    throw new NotFoundError(collection.BOARDS);
+  if (!boards.length) {
+    throw new NotFoundError(collection.BOARDS, null, "Couldn't find boards");
   }
+  res.json(boards.map(board => board.toResponse()));
 });
 
 router.route('/:id').get(async (req, res) => {
@@ -22,7 +22,7 @@ router.route('/:id').get(async (req, res) => {
       res
     );
   } else {
-    res.json(Board.toResponse(board));
+    res.json(board.toResponse());
   }
 });
 
@@ -34,19 +34,19 @@ router.route('/').post(async (req, res) => {
       columns
     })
   );
-  res.json(Board.toResponse(board));
+  res.json(board.toResponse());
 });
 
 router.route('/:id').delete(async (req, res) => {
   const board = await boardsService.deleteBoard(req.params.id);
-  if (board !== 204) {
+  if (board.deletedCount === 1) {
+    res.status(204).send('The board has been deleted');
+  } else {
     handleError(
       new NotFoundError(collection.BOARDS, `id: ${req.params.id}`),
       req,
       res
     );
-  } else {
-    res.status(board).send('The board has been deleted');
   }
 });
 
@@ -57,7 +57,7 @@ router.route('/:id').put(async (req, res) => {
   };
   const board = await boardsService.update(updateParams);
   // eslint-disable-next-line no-unused-expressions
-  if (board.status === 204) res.status(200).json(board.updateBoard);
+  if (board) res.status(200).json(board);
   else {
     handleError(
       new NotFoundError(collection.BOARDS, `id: ${req.params.id}`),
