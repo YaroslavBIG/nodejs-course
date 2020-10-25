@@ -51,7 +51,4 @@ app.use((err, req, res, next) => {
   handleError(err, req, res, next);
 });
 
-// Promise.reject(Error('Oops!'));
-// throw Error('Oops!');
-
 module.exports = app;
