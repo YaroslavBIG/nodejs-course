@@ -3,20 +3,19 @@ const taskService = require('./task.service');
 const Task = require('./task.model');
 const { handleError } = require('../../logger/loggerConfig');
 const { collection } = require('../../common/inMemoryDB');
-const { NotFoundError, logger } = require('../../logger/loggerConfig');
+const { NotFoundError } = require('../../logger/loggerConfig');
 
 router.route('/').get(async (req, res) => {
   const tasks = await taskService.getAll(req.params.boardId);
-  await res.json(tasks);
+  await res.json(tasks.map(task => task.toResponse()));
 });
 
 router.get('/:id', async (req, res) => {
-  logger.warn(JSON.stringify(req.params));
-  if (!req.params.id) {
+  const task = await taskService.get(req.params.boardId, req.params.id);
+  if (!task) {
     res.status(404).send(`unexpected param id: ${req.params.id}`);
   } else {
-    const task = await taskService.get(req.params.boardId, req.params.id);
-    res.status(200).send(task.toResponse());
+    res.json(task.toResponse());
   }
 });
 
@@ -27,20 +26,15 @@ router.route('/').post(async (req, res) => {
       boardId: req.params.boardId
     })
   );
-  await res.json(task);
+  res.json(task.toResponse());
 });
 
 router.route('/:id').delete(async (req, res) => {
   const task = await taskService.deleteTask(req.params.boardId, req.params.id);
-  if (task.deletedCount === 1) {
-    res.status(204).send('The task has been deleted');
-  } else {
-    handleError(
-      new NotFoundError(collection.TASKS, `id: ${req.params.id}`),
-      req,
-      res
-    );
+  if (task.deletedCount !== 1) {
+    res.status(404).json(task);
   }
+  res.status(204);
 });
 
 router.route('/:id').put(async (req, res) => {
