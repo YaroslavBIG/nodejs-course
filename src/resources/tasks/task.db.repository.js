@@ -14,9 +14,13 @@ const get = async (boardId, taskId) => {
 
 const createTask = async task => Task.create(task);
 
-const deleteTask = async (boardId, taskId) => Task.findByIdAndDelete(taskId);
+const deleteTask = async (boardId, taskId) =>
+  Task.findOneAndDelete({ _id: taskId, boardId });
 
 const update = async (id, boardId, body) =>
   Task.findOneAndUpdate({ _id: id, boardId }, { $set: body }, { new: true });
 
-module.exports = { getAll, get, update, createTask, deleteTask };
+const updateTasks = async (_id, filters) =>
+  Task.updateMany({ userId: _id }, filters);
+
+module.exports = { getAll, get, update, createTask, deleteTask, updateTasks };

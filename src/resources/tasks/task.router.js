@@ -30,11 +30,15 @@ router.route('/').post(async (req, res) => {
 });
 
 router.route('/:id').delete(async (req, res) => {
-  const task = await taskService.deleteTask(req.params.boardId, req.params.id);
-  if (task.deletedCount !== 1) {
-    res.status(404).json(task);
+  try {
+    const task = await taskService.deleteTask(
+      req.params.boardId,
+      req.params.id
+    );
+    res.status(204).json(task);
+  } catch (e) {
+    res.status(404).json(e);
   }
-  res.status(204);
 });
 
 router.route('/:id').put(async (req, res) => {
