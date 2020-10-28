@@ -17,12 +17,10 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:')).once(
   'open',
   () => {
     logger.info('Successfully connect to DB');
+    logger.info('DB Cleared');
+    db.dropDatabase();
     app.listen(PORT, () =>
       logger.info(`App is running on http://localhost:${PORT}`)
     );
   }
 );
-
-// app.listen(PORT, () =>
-//   logger.info(`App is running on http://localhost:${PORT}`)
-// );
