@@ -43,13 +43,11 @@ app.use('/', (req, res, next) => {
 
 app.use('/login', loginRouter);
 
-app.use(checkToken);
+app.use('/users', checkToken, userRouter);
 
-app.use('/users', userRouter);
+app.use('/boards', checkToken, boardRouter);
 
-app.use('/boards', boardRouter);
-
-boardRouter.use('/:boardId/tasks', taskRouter);
+boardRouter.use('/:boardId/tasks', checkToken, taskRouter);
 
 app.use((req, res, next) => next(createError(StatusCodes.NOT_FOUND)));
 
