@@ -29,7 +29,7 @@ router.route('/').post(async (req, res) => {
   const user = await usersService.create(
     new User({
       login,
-      password: hashPassword(password),
+      password: await hashPassword(password),
       name
     })
   );

@@ -17,13 +17,13 @@ const deleteUser = async _id => {
 const update = async data => {
   const { login, password, name, id } = data;
 
-  const hashedPass = hashPassword(password);
+  const hashedPass = await hashPassword(password);
 
   await User.findByIdAndUpdate(id, { login, password: hashedPass, name });
 
   return await get(id);
 };
 
-const findUser = async login => await User.find({ login });
+const findUser = async login => User.find({ login });
 
 module.exports = { getAll, get, createUser, deleteUser, update, findUser };
