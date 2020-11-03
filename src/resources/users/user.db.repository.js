@@ -24,7 +24,6 @@ const update = async data => {
   return await get(id);
 };
 
-const findUser = async (login, password) =>
-  await User.find({ login, password });
+const findUser = async login => await User.find({ login });
 
 module.exports = { getAll, get, createUser, deleteUser, update, findUser };

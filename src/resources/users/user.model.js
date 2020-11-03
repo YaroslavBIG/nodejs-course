@@ -16,4 +16,4 @@ const User = new Schema(
 
 addSchemaMethod(User);
 
-module.exports = module.exports = mongoose.model('users', User);
+module.exports = mongoose.model('users', User);
