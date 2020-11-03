@@ -5,7 +5,7 @@ module.exports = async (req, res, next) => {
   const authHeader = req.header('Authorization');
 
   if (!authHeader) {
-    res.status(401).send('Unauthorized user!');
+    return res.status(401).send('Unauthorized user!');
   }
 
   const tokenString = authHeader;
