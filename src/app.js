@@ -6,6 +6,7 @@ const path = require('path');
 const YAML = require('yamljs');
 const cors = require('cors');
 const helmet = require('helmet');
+const loginRouter = require('./resources/login/login.router');
 const userRouter = require('./resources/users/user.router');
 const boardRouter = require('./resources/boards/board.router');
 const taskRouter = require('./resources/tasks/task.router');
@@ -16,6 +17,7 @@ const {
   uncatchErrorInit
 } = require('./logger/loggerConfig');
 const { StatusCodes } = require('http-status-codes');
+const checkToken = require('./common/authHelpers/checkToken');
 
 const app = express();
 app.disable('x-powered-by');
@@ -38,6 +40,10 @@ app.use('/', (req, res, next) => {
   }
   next();
 });
+
+app.use('/login', loginRouter);
+
+app.use(checkToken);
 
 app.use('/users', userRouter);
 
