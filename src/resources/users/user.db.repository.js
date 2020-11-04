@@ -1,4 +1,5 @@
 const User = require('./user.model');
+const { hashPassword } = require('../../common/authHelpers/hashHelpers');
 const { updateTasks } = require('../tasks/task.service');
 
 const getAll = async () => User.find({});
@@ -16,9 +17,13 @@ const deleteUser = async _id => {
 const update = async data => {
   const { login, password, name, id } = data;
 
-  await User.findByIdAndUpdate(id, { login, password, name });
+  const hashedPass = await hashPassword(password);
+
+  await User.findByIdAndUpdate(id, { login, password: hashedPass, name });
 
   return await get(id);
 };
 
-module.exports = { getAll, get, createUser, deleteUser, update };
+const findUser = async login => User.find({ login });
+
+module.exports = { getAll, get, createUser, deleteUser, update, findUser };

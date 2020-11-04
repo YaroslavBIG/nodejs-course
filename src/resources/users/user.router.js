@@ -4,6 +4,7 @@ const usersService = require('./user.service');
 const { NotFoundError } = require('../../logger/loggerConfig');
 const { collection } = require('../../common/inMemoryDB');
 const { handleError } = require('../../logger/loggerConfig');
+const { hashPassword } = require('../../common/authHelpers/hashHelpers');
 
 router.route('/').get(async (req, res) => {
   const users = await usersService.getAll();
@@ -28,7 +29,7 @@ router.route('/').post(async (req, res) => {
   const user = await usersService.create(
     new User({
       login,
-      password,
+      password: await hashPassword(password),
       name
     })
   );

@@ -6,6 +6,7 @@ const path = require('path');
 const YAML = require('yamljs');
 const cors = require('cors');
 const helmet = require('helmet');
+const loginRouter = require('./resources/login/login.router');
 const userRouter = require('./resources/users/user.router');
 const boardRouter = require('./resources/boards/board.router');
 const taskRouter = require('./resources/tasks/task.router');
@@ -16,6 +17,7 @@ const {
   uncatchErrorInit
 } = require('./logger/loggerConfig');
 const { StatusCodes } = require('http-status-codes');
+const checkToken = require('./common/authHelpers/checkToken');
 
 const app = express();
 app.disable('x-powered-by');
@@ -39,11 +41,13 @@ app.use('/', (req, res, next) => {
   next();
 });
 
-app.use('/users', userRouter);
+app.use('/login', loginRouter);
 
-app.use('/boards', boardRouter);
+app.use('/users', checkToken, userRouter);
 
-boardRouter.use('/:boardId/tasks', taskRouter);
+app.use('/boards', checkToken, boardRouter);
+
+boardRouter.use('/:boardId/tasks', checkToken, taskRouter);
 
 app.use((req, res, next) => next(createError(StatusCodes.NOT_FOUND)));
 
