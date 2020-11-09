@@ -41,14 +41,44 @@ components:
       properties:
         id:
           type: string
+          description: The task's ID
         title:
           type: string
+          description: The task's title
         order:
-          type: number
+          type: integer
+          description: The task's order
         description:
           type: string
         userId:
           type: string
+          description: The task's Assignee
+        boardId:
+          type: string
+          description: Board ID
+        columnId:
+          type: string
+          description: Column ID
+        checkList:
+          type: array
+          items:
+            type: object
+            properties:
+            title:
+              type: string
+            order:
+              type: integer
+            checks: 
+              type: array
+              items:
+                type: object
+                properties:
+                  title:
+                    type: string
+                  checked:
+                    type: boolean
+                  order:
+                    type: integer
   responses:
     UnauthorizedError:
       description: Access token is missing or invalid
@@ -397,6 +427,26 @@ paths:
                 columnId:
                   type: string
                   description: Column ID
+                checkList:
+                  type: array
+                  items:
+                   type: object
+                   properties:
+                    title:
+                      type: string
+                    order:
+                      type: integer
+                    checks: 
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          title:
+                            type: string
+                          checked:
+                            type: boolean
+                          order:
+                            type: integer
               required:
                 - title
                 - order
@@ -470,10 +520,30 @@ paths:
                 columnId:
                   type: string
                   description: Column ID
-              required:
-                - order
-                - boardId
-                - columnId
+                checkList:
+                  type: array
+                  items:
+                   type: object
+                   properties:
+                    title:
+                      type: string
+                    order:
+                      type: integer
+                    checks: 
+                      type: array
+                      items:
+                        type: object
+                        properties:
+                          title:
+                            type: string
+                          checked:
+                            type: boolean
+                          order:
+                            type: integer
+      required:
+      - order
+      - boardId
+      - columnId
       responses:
         200:
           description: The task has been updated.
