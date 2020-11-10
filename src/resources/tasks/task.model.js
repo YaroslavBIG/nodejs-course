@@ -16,7 +16,7 @@ const CheckList = new Schema({
     }
   ]
 });
-
+// TODO: Add priority
 const Task = new Schema(
   {
     title: { type: String, required: true },
@@ -25,7 +25,7 @@ const Task = new Schema(
     userId: String,
     checkList: [CheckList],
     boardId: { type: String, required: true },
-    columnId: { type: String, required: true }
+    columnId: { type: String, required: false }
   },
   { collection: 'tasks' }
 );
