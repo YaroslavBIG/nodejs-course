@@ -1,16 +1,19 @@
+const { ObjectId } = require('mongodb');
 const mongoose = require('mongoose');
 const addSchemaMethod = require('../../utils/addSchemaMethod');
 const { Schema } = mongoose;
 
+const Column = new Schema({
+  id: ObjectId,
+  title: { type: String, required: true },
+  order: { type: Number, required: true },
+  description: String
+});
+
 const Board = new Schema(
   {
     title: String,
-    columns: [
-      {
-        title: String,
-        order: Number
-      }
-    ]
+    columns: [Column]
   },
   { collection: 'boards' }
 );
