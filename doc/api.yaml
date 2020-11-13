@@ -385,18 +385,6 @@ paths:
                   $ref: "#/components/schemas/Task"
         401:
           $ref: '#/components/responses/UnauthorizedError'
-  /boards/{boardId}/{columnId}/tasks:
-    parameters:
-      - name: boardId
-        in: path
-        required: true
-        schema:
-          type: string
-      - name: columnId
-        in: path
-        required: true
-        schema:
-          type: string
     post:
       tags:
         - Tasks

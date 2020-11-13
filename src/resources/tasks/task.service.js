@@ -4,6 +4,9 @@ const getAll = boardId => taskRepo.getAll(boardId);
 
 const get = async (boardId, taskId) => taskRepo.get(boardId, taskId);
 
+const getByColumnId = async (boardId, columnId) =>
+  taskRepo.getByColumnId(boardId, columnId);
+
 const create = async task => taskRepo.createTask(task);
 
 const deleteTask = async (boardId, taskId) =>
@@ -18,6 +21,7 @@ const updateTasks = async (id, filters) => taskRepo.updateTasks(id, filters);
 module.exports = {
   getAll,
   get,
+  getByColumnId,
   create,
   deleteTask,
   deleteTasks,
