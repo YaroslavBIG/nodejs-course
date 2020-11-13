@@ -1,7 +1,7 @@
 const router = require('express').Router({ mergeParams: true });
 const taskService = require('./task.service');
 const Task = require('./task.model');
-const { handleError, logger } = require('../../logger/loggerConfig');
+const { handleError } = require('../../logger/loggerConfig');
 const { collection } = require('../../common/inMemoryDB');
 const { NotFoundError } = require('../../logger/loggerConfig');
 
@@ -14,20 +14,6 @@ router.get('/:id', async (req, res) => {
   const task = await taskService.get(req.params.boardId, req.params.id);
   if (!task) {
     res.status(404).send(`unexpected param id: ${req.params.id}`);
-  } else {
-    res.json(task.toResponse());
-  }
-});
-
-router.get('/:boardId/:columnId', async (req, res) => {
-  logger.warn(req.params.boardId);
-  logger.warn(req.params.columnId);
-  const task = await taskService.getByColumnId(
-    req.params.boardId,
-    req.params.columnId
-  );
-  if (!task) {
-    res.status(404).send(`unexpected param id: ${req.params.columnId}`);
   } else {
     res.json(task.toResponse());
   }
