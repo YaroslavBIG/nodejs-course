@@ -56,7 +56,6 @@ router.route('/:id').put(async (req, res) => {
     boardId: req.params.id
   };
   const board = await boardsService.update(updateParams);
-  // eslint-disable-next-line no-unused-expressions
   if (board) res.status(200).json(board);
   else {
     handleError(

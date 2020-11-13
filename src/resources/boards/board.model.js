@@ -4,7 +4,7 @@ const { Schema } = mongoose;
 // TODO: columns id`s
 const Board = new Schema(
   {
-    title: String,
+    title: { type: String, required: true },
     columns: [String]
   },
   { collection: 'boards' }
