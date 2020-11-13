@@ -12,15 +12,6 @@ const get = async (boardId, taskId) => {
   }
 };
 
-const getByColumnId = async (boardId, columnId) => {
-  try {
-    const task = await Task.findOne({ boardId, columnId });
-    return task;
-  } catch (e) {
-    logger.warn(JSON.stringify(e));
-  }
-};
-
 const createTask = async task => Task.create(task);
 
 const deleteTask = async (boardId, taskId) =>
@@ -37,7 +28,6 @@ const deleteTasks = async boardId => Task.deleteMany({ boardId });
 module.exports = {
   getAll,
   get,
-  getByColumnId,
   update,
   createTask,
   deleteTask,

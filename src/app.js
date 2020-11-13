@@ -9,6 +9,7 @@ const helmet = require('helmet');
 const userRouter = require('./resources/users/user.router');
 const boardRouter = require('./resources/boards/board.router');
 const taskRouter = require('./resources/tasks/task.router');
+const columnRouter = require('./resources/tasks/task.router');
 const {
   paramsMorgan,
   morgan,
@@ -42,6 +43,8 @@ app.use('/', (req, res, next) => {
 app.use('/users', userRouter);
 
 app.use('/boards', boardRouter);
+
+app.use('/:boardId/column', columnRouter);
 
 boardRouter.use('/:boardId/tasks', taskRouter);
 

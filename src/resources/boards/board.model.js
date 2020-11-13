@@ -1,21 +1,15 @@
 const mongoose = require('mongoose');
 const addSchemaMethod = require('../../utils/addSchemaMethod');
 const { Schema } = mongoose;
-
-const Column = new Schema({
-  title: { type: String, required: true },
-  order: { type: Number, required: true },
-  description: String
-});
-
+// TODO: columns id`s
 const Board = new Schema(
   {
     title: String,
-    columns: [Column]
+    columns: [String]
   },
   { collection: 'boards' }
 );
 
 addSchemaMethod(Board);
 
-module.exports = module.exports = mongoose.model('boards', Board);
+module.exports = mongoose.model('boards', Board);
