@@ -383,8 +383,8 @@ paths:
     get:
       tags:
         - Columns
-      summary: Get Columns by boardId
-      description: Gets columns by the Board ID (e.g. “/board/1/columns”)
+      summary: Get all columns by boardId
+      description: Gets all columns by the Board ID (e.g. “/board/1/columns”)
       responses:
         200:
           description: Successful operation
@@ -396,6 +396,38 @@ paths:
                   $ref: '#/components/schemas/Column'
         401:
           $ref: '#/components/responses/UnauthorizedError'
+    post:
+      tags:
+        - Columns
+      summary: Create new column
+      description: Creates a new column
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Column'
+        401:
+          $ref: '#/components/responses/UnauthorizedError'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              title: example
+              properties:
+                title:
+                  type: string
+                  description: The column's title
+                order:
+                  type: integer
+                  description: The column's order
+                description:
+                  type: string
   '/boards/{boardId}/tasks':
     parameters:
       - name: boardId
