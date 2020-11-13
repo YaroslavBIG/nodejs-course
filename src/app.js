@@ -44,7 +44,7 @@ app.use('/users', userRouter);
 
 app.use('/boards', boardRouter);
 
-app.use('/:boardId/column', columnRouter);
+app.use('/:boardId/columns', columnRouter);
 
 boardRouter.use('/:boardId/tasks', taskRouter);
 

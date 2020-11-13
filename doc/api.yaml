@@ -3,10 +3,8 @@ info:
   title: Trello Service
   description: Let's try to create a competitor for Trello!
   version: 1.0.0
-
 servers:
   - url: /
-
 components:
   schemas:
     User:
@@ -35,6 +33,21 @@ components:
                 type: string
               order:
                 type: integer
+    Column:
+      required:
+        - title
+      properties:
+        id:
+          type: string
+          description: The column's ID
+        title:
+          type: string
+          description: The column's title
+        order:
+          type: integer
+          description: The column's order
+        description:
+          type: string
     Task:
       required:
         - title
@@ -64,21 +77,22 @@ components:
           items:
             type: object
             properties:
-            title:
-              type: string
-            order:
-              type: integer
-            checks: 
-              type: array
-              items:
-                type: object
-                properties:
-                  title:
-                    type: string
-                  checked:
-                    type: boolean
-                  order:
-                    type: integer
+              title:
+                type: string
+                description: The check's title
+              order:
+                type: integer
+              checks:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    title:
+                      type: string
+                    checked:
+                      type: boolean
+                    order:
+                      type: integer
   responses:
     UnauthorizedError:
       description: Access token is missing or invalid
@@ -87,10 +101,8 @@ components:
       type: http
       scheme: bearer
       bearerFormat: JWT
-
 security:
   - bearerAuth: []
-
 paths:
   /users:
     get:
@@ -106,7 +118,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/User"
+                  $ref: '#/components/schemas/User'
         401:
           $ref: '#/components/responses/UnauthorizedError'
     post:
@@ -139,12 +151,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/User"
+                $ref: '#/components/schemas/User'
         400:
           description: Bad request
         401:
           $ref: '#/components/responses/UnauthorizedError'
-  /users/{userId}:
+  '/users/{userId}':
     parameters:
       - name: userId
         in: path
@@ -155,15 +167,14 @@ paths:
       tags:
         - Users
       summary: Get user by ID
-      description: Gets a user by ID
-        e.g. “/users/123” (remove password from response)
+      description: Gets a user by ID e.g. “/users/123” (remove password from response)
       responses:
         200:
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/User"
+                $ref: '#/components/schemas/User'
         401:
           $ref: '#/components/responses/UnauthorizedError'
         404:
@@ -198,7 +209,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/User"
+                $ref: '#/components/schemas/User'
         400:
           description: Bad request
         401:
@@ -207,9 +218,9 @@ paths:
       tags:
         - Users
       summary: Delete user
-      description: Deletes user by ID. When somebody
-        DELETE User, all Tasks where User is assignee
-        should be updated to put userId=null
+      description: >-
+        Deletes user by ID. When somebody DELETE User, all Tasks where User is
+        assignee should be updated to put userId=null
       responses:
         204:
           description: The user has been deleted
@@ -231,7 +242,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/Board"
+                  $ref: '#/components/schemas/Board'
         401:
           $ref: '#/components/responses/UnauthorizedError'
     post:
@@ -272,12 +283,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Board"
+                $ref: '#/components/schemas/Board'
         400:
           description: Bad request
         401:
           $ref: '#/components/responses/UnauthorizedError'
-  /boards/{boardId}:
+  '/boards/{boardId}':
     parameters:
       - name: boardId
         in: path
@@ -295,7 +306,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Board"
+                $ref: '#/components/schemas/Board'
         401:
           $ref: '#/components/responses/UnauthorizedError'
         404:
@@ -342,7 +353,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Board"
+                $ref: '#/components/schemas/Board'
         400:
           description: Bad request
         401:
@@ -351,9 +362,9 @@ paths:
       tags:
         - Boards
       summary: Delete board
-      description: Deletes a Board by ID.
-        When somebody DELETE Board,
-        all its Tasks should be deleted as well
+      description: >-
+        Deletes a Board by ID. When somebody DELETE Board, all its Tasks should
+        be deleted as well
       responses:
         204:
           description: The board has been deleted
@@ -361,7 +372,31 @@ paths:
           $ref: '#/components/responses/UnauthorizedError'
         404:
           description: Board not found
-  /boards/{boardId}/tasks:
+  '/boards/{boardId}/columns':
+    summary: Columns
+    parameters:
+      - name: boardId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags:
+        - Columns
+      summary: Get Columns by boardId
+      description: Gets columns by the Board ID (e.g. “/board/1/columns”)
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Column'
+        401:
+          $ref: '#/components/responses/UnauthorizedError'
+  '/boards/{boardId}/tasks':
     parameters:
       - name: boardId
         in: path
@@ -372,8 +407,7 @@ paths:
       tags:
         - Tasks
       summary: Get Tasks by boardId
-      description: Gets tasks by the Board ID
-        (e.g. “/board/1/tasks”)
+      description: Gets tasks by the Board ID (e.g. “/board/1/tasks”)
       responses:
         200:
           description: Successful operation
@@ -382,7 +416,7 @@ paths:
               schema:
                 type: array
                 items:
-                  $ref: "#/components/schemas/Task"
+                  $ref: '#/components/schemas/Task'
         401:
           $ref: '#/components/responses/UnauthorizedError'
     post:
@@ -418,23 +452,23 @@ paths:
                 checkList:
                   type: array
                   items:
-                   type: object
-                   properties:
-                    title:
-                      type: string
-                    order:
-                      type: integer
-                    checks: 
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          title:
-                            type: string
-                          checked:
-                            type: boolean
-                          order:
-                            type: integer
+                    type: object
+                    properties:
+                      title:
+                        type: string
+                      order:
+                        type: integer
+                      checks:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            title:
+                              type: string
+                            checked:
+                              type: boolean
+                            order:
+                              type: integer
               required:
                 - title
                 - order
@@ -446,12 +480,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Task"
+                $ref: '#/components/schemas/Task'
         400:
           description: Bad request
         401:
           $ref: '#/components/responses/UnauthorizedError'
-  /boards/{boardId}/tasks/{taskId}:
+  '/boards/{boardId}/tasks/{taskId}':
     parameters:
       - name: boardId
         in: path
@@ -467,27 +501,26 @@ paths:
       tags:
         - Tasks
       summary: Get Task by boardId and taskId
-      description: Gets the Task by the Board's and task ID
-        (e.g. “/board/1/tasks/123”)
+      description: Gets the Task by the Board's and task ID (e.g. “/board/1/tasks/123”)
       responses:
         200:
           description: Successful operation
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Task"
+                $ref: '#/components/schemas/Task'
         401:
           $ref: '#/components/responses/UnauthorizedError'
     put:
-      tags:
-        - Tasks
+      tags: 
+       - Tasks
       summary: Update Task
       description: Updates the Task by ID
       requestBody:
         required: true
         content:
           application/json:
-            schema:
+           schema:
               type: object
               title: example
               properties:
@@ -511,34 +544,34 @@ paths:
                 checkList:
                   type: array
                   items:
-                   type: object
-                   properties:
-                    title:
-                      type: string
-                    order:
-                      type: integer
-                    checks: 
-                      type: array
-                      items:
-                        type: object
-                        properties:
-                          title:
-                            type: string
-                          checked:
-                            type: boolean
-                          order:
-                            type: integer
-      required:
-      - order
-      - boardId
-      - columnId
+                    type: object
+                    properties:
+                      title:
+                        type: string
+                      order:
+                        type: integer
+                      checks:
+                        type: array
+                        items:
+                          type: object
+                          properties:
+                            title:
+                              type: string
+                            checked:
+                              type: boolean
+                            order:
+                              type: integer
+              required:
+                - order
+                - boardId
+                - columnId
       responses:
         200:
           description: The task has been updated.
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/Task"
+                $ref: '#/components/schemas/Task'
         400:
           description: Bad request
         401:
@@ -561,8 +594,7 @@ paths:
     post:
       tags:
         - Login
-      security:
-        []
+      security: []
       summary: Login
       description: Logins a user and returns a JWT-token
       requestBody:
