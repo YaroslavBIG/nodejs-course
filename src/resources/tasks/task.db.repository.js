@@ -25,12 +25,15 @@ const updateTasks = async (userId, filters) =>
 
 const deleteTasks = async boardId => Task.deleteMany({ boardId });
 
+const deleteTasksByColumnId = async columnId => Task.deleteMany({ columnId });
+
 module.exports = {
   getAll,
   get,
   update,
   createTask,
   deleteTask,
+  deleteTasksByColumnId,
   updateTasks,
   deleteTasks
 };

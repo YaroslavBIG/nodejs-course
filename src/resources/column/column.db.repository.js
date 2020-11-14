@@ -13,7 +13,7 @@ const getAll = async boardId => {
 
 const get = async (boardId, columnId) => {
   try {
-    const column = await Column.findOne({ boardId, columnId });
+    const column = await Column.findOne({ boardId, _id: columnId });
     return column;
   } catch (e) {
     logger.warn(JSON.stringify(e));
@@ -22,4 +22,23 @@ const get = async (boardId, columnId) => {
 
 const createColumn = async column => Column.create(column);
 
-module.exports = { getAll, get, createColumn };
+const deleteColumn = async (boardId, ColumnId) =>
+  Column.findOneAndDelete({ _id: ColumnId, boardId });
+
+const deleteColumns = async boardId => Column.deleteMany({ boardId });
+
+const update = async (id, boardId, body) =>
+  Column.findOneAndUpdate({ _id: id, boardId }, { $set: body }, { new: true });
+
+const updateColumns = async (userId, filters) =>
+  Column.updateMany({ userId }, filters);
+
+module.exports = {
+  getAll,
+  get,
+  createColumn,
+  deleteColumn,
+  deleteColumns,
+  update,
+  updateColumns
+};

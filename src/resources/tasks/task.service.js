@@ -11,6 +11,9 @@ const deleteTask = async (boardId, taskId) =>
 
 const deleteTasks = async boardId => taskRepo.deleteTasks(boardId);
 
+const deleteTasksByColumnId = async ColumnId =>
+  taskRepo.deleteTasksByColumnId(ColumnId);
+
 const update = async (id, boardId, body) => taskRepo.update(id, boardId, body);
 
 const updateTasks = async (id, filters) => taskRepo.updateTasks(id, filters);
@@ -21,6 +24,7 @@ module.exports = {
   create,
   deleteTask,
   deleteTasks,
+  deleteTasksByColumnId,
   update,
   updateTasks
 };

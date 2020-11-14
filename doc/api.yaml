@@ -428,6 +428,45 @@ paths:
                   description: The column's order
                 description:
                   type: string
+  '/boards/{boardId}/columns/{columnId}':
+    summary: Columns
+    parameters:
+      - name: boardId
+        in: path
+        required: true
+        schema:
+          type: string
+      - name: columnId
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      tags:
+        - Columns
+      summary: Get columns by boardId and columnId
+      description: Gets the Column by the Board's and task ID (e.g. “/board/1/column/123”)
+      responses:
+        200:
+          description: Successful operation
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Column'
+        401:
+          $ref: '#/components/responses/UnauthorizedError'
+    delete:
+      tags:
+        - Columns
+      summary: Delete Column
+      description: Deletes Column by ID.
+      responses:
+        204:
+          description: The column has been deleted
+        401:
+          $ref: '#/components/responses/UnauthorizedError'
+        404:
+          description: Task not found
   '/boards/{boardId}/tasks':
     parameters:
       - name: boardId

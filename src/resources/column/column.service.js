@@ -1,5 +1,7 @@
 const columnRepo = require('./column.db.repository');
 const boardsService = require('../boards/board.service');
+const tasksService = require('../tasks/task.service');
+const { logger } = require('../../logger/loggerConfig');
 
 const getAll = async boardId => columnRepo.getAll(boardId);
 
@@ -18,4 +20,38 @@ const create = async column => {
   return newColumn;
 };
 
-module.exports = { getAll, get, create };
+const deleteColumn = async (boardId, columnId) => {
+  const result = await columnRepo.deleteColumn(boardId, columnId);
+
+  if (result) {
+    const board = await boardsService.get(boardId);
+    const columns = board.columns.filter(id => id !== columnId);
+    boardsService.update({
+      ...board,
+      columns
+    });
+    try {
+      tasksService.deleteTasksByColumnId(columnId);
+    } catch (e) {
+      logger.info(JSON.stringify(e));
+    }
+  }
+  return result;
+};
+const deleteColumns = async boardId => columnRepo.deleteColumns(boardId);
+
+const update = async (id, columnId, body) =>
+  columnRepo.update(id, columnId, body);
+
+const updateColumns = async (id, filters) =>
+  columnRepo.updateColumns(id, filters);
+
+module.exports = {
+  getAll,
+  get,
+  create,
+  deleteColumn,
+  deleteColumns,
+  update,
+  updateColumns
+};
